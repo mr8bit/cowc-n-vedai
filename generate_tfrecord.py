@@ -30,6 +30,31 @@ FLAGS = flags.FLAGS
 def class_text_to_int(row_label):
     if row_label == 'car':
         return 1
+    if row_label == 'truck':
+        return 2
+    if row_label == 'pickup':
+        return 3
+    if row_label == 'tractor':
+        return 4
+    if row_label == 'camping':
+        return 5
+    if row_label == 'boat':
+        return 6
+    if row_label == 'motorcycle':
+        return 7
+    if row_label == 'bus':
+        return 8
+    if row_label == 'van':
+        return 9
+    if row_label == 'other':
+        return 10
+    if row_label == 'small car':
+        return 11
+    if row_label == 'large car':
+        return 12
+    if row_label == 'plane':
+        return 13
+
     else:
         None
 
