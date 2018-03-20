@@ -59,8 +59,10 @@ def update_annotations(filename):
 			name = ET.SubElement(object, 'name').text = 'other'
 		elif data.iloc[row]['class'] == 11:
 			name = ET.SubElement(object, 'name').text = 'car'
+			COUNT_CAR += 1
 		elif data.iloc[row]['class'] == 12:
 			name = ET.SubElement(object, 'name').text = 'large'
+			COUNT_CAR += 1
 		elif data.iloc[row]['class'] == 31:
 			name = ET.SubElement(object, 'name').text = 'plane'
 			COUNT_PLANE += 1

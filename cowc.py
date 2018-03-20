@@ -2,15 +2,17 @@ import os
 from PIL import Image
 import numpy as np
 import xml.etree.cElementTree as ET
+Image.MAX_IMAGE_PIXELS = 1000000000
 
 def get_original_name(file):
     name = file.split('.')[0].split('_')[0]
-    return name
+    extention = file.split('.')[1]
+    return name, extention
 
 def create_xml_file(file_original,file_annotation):
     count= 0
     full_path_to_image = os.path.abspath('images/{0}.png'.format(file_original))
-    annotadet = np.array(Image.open('annotations/{0}'.format(file_annotation)))
+    annotadet = np.array(Image.open('annotations/cowc/{0}'.format(file_annotation)))
     annotation = ET.Element("annotation", verified="yes")
     folder = ET.SubElement(annotation, "folder").text = 'images'
     filename = ET.SubElement(annotation, "filename").text = '{0}.{1}'.format(file_original,'png')
@@ -41,8 +43,8 @@ def create_xml_file(file_original,file_annotation):
     print("Count Car: {0}".format(count))
 
 if __name__ == '__main__':
-    list = os.listdir('annotations/')
+    list = os.listdir('annotations/cowc/')
     for file in list:
-        name_orgiginal = get_original_name(file)
+        name_orgiginal, extention = get_original_name(file)
         print("Work on: {0}".format(name_orgiginal))
         create_xml_file(name_orgiginal,file)
