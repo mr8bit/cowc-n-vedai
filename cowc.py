@@ -11,7 +11,7 @@ def get_original_name(file):
 def create_xml_file(file_original,file_annotation):
     count= 0
     full_path_to_image = os.path.abspath('images/{0}.png'.format(file_original))
-    annotadet = cv2.imread('annotations/{0}'.format(file_annotation))
+    annotadet = np.array(Image.open('annotations/{0}'.format(file_annotation)))
     annotation = ET.Element("annotation", verified="yes")
     folder = ET.SubElement(annotation, "folder").text = 'images'
     filename = ET.SubElement(annotation, "filename").text = '{0}.{1}'.format(file_original,'png')
