@@ -9,4 +9,3 @@ wget "https://s86sas.storage.yandex.net/rdisk/6792a74cf1e68cf57e5be496db873ce665
 ```
 
 Запустите скрипты:`cowc.py` для создания COWC и `vedai.py` для VEDAI. После работы скриптов у вас в папке `images/` будут лежать `xml` файлы для создания данных в формате `tfRecord`
-wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=/1xgCwZEO2-3jIXbiIZ-K9z2F8dZXwl0Ox/view?usp=sharing' -O images.tar.gz
